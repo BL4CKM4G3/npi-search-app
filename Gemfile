@@ -59,6 +59,7 @@ group :development, :test do
   gem "faker"
   gem "rails-controller-testing"
   gem "factory_bot_rails"
+  gem "byebug"
 end
 
 group :development do
@@ -70,5 +71,6 @@ group :development do
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
-  gem "byebug"
 end
+
+gem "faraday"
