@@ -1,0 +1,2 @@
+class ProviderCache < ApplicationRecord
+end
