@@ -11,6 +11,13 @@
   </head>
 
   <body>
-    <%= yield %>
+    <nav class="flex flex-row justify-center">
+      <h1>Welcome to NPI Search App</h1>
+    </nav>
+    <main class="flex flex-col items-center">
+      <div class="lg:max-w-[70vw]">
+        <%= yield %>
+      </div>
+    </main>
   </body>
 </html>
