@@ -1,14 +1,35 @@
-<div class="flex flex-col">
+<div data-controller="table" class="flex flex-col">
   <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
     <div class="py-2 flex flex-row justify-center min-w-full">
-      <label for="">
-        Search for NPI Number
-        <input type="text" class="border border-gray-400">
-      </label>
+      <input
+        data-table-target="number-input"
+        autocomplete="on"
+        maxlength="10"
+        type="text"
+        placeholder="Number"
+        class="border border-gray-400 pl-2" />
+
+      <button
+        data-table-target="button"
+        data-action="click->table#search"
+        type="button"
+        class="px-6 py-3 bg-blue-400"
+        title="Click here to search provider!"
+      >
+        Search
+      </button>
+      
     </div>
+
+    <div class="flex flex-row justify-center items-center">
+      <div class="rounded-lg px-4 py-2">
+        <p id="notification-portal" class="text-md font-medium text-gray-900"></p>
+      </div>
+    </div>
+
     <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
       <div class="overflow-hidden">
-        <table class="min-w-full table-auto">
+        <table class="displayer" class="min-w-full table-auto">
           <thead class="bg-white">
             <tr>
               <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
@@ -27,41 +48,49 @@
                 Creadential
               </th>
               <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                Created At
+                Address
               </th>
               <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                Last Updated
+                Taxonomy
               </th>
             </tr>
           </thead>
-          <tbody>
+          <tbody id="table-body" data-table-target="table-body" class="max-h-[60vh] overflow-y-scroll">
             <% @providers.each do |provider| %>
-              <tr class="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-300">
-                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+              <tr class="table-row">
+                <td class="table-cell">
                   <%= provider.npi_number %>
                 </td>
-                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                <td class="table-cell">
                   <%= provider.name %>
                 </td>
-                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                <td class="table-cell">
                   <%= provider.status %>
                 </td>
-                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                <td class="table-cell">
                   <%= provider.enumeration_type %>
                 </td>
-                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                <td class="table-cell">
                   <%= provider.credential %>
                 </td>
-                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                  <%= provider.registered_at.strftime("%m/%d/%Y") %>
+                <td class="table-cell">
+                  <%= provider.main_address.address_1 %>
                 </td>
-                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                  <%= provider.last_updated.strftime("%m/%d/%Y") %>
+                <td class="table-cell">
+                  <%= provider.main_taxonomy.code %>
+                  <hr />
+                  <%= provider.main_taxonomy.desc %>
                 </td>
               </tr>
             <% end %>
           </tbody>
         </table>
+
+        <% if @providers.empty? %>
+          <div data-table-target="no-data-info" class="flex flex-row justify-center items-center">
+            <h1>No data to present</h1>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
