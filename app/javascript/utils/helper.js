@@ -9,7 +9,7 @@ export const focusElement = function (element) {
 }
 
 export const checkRecordExists = function (data) {
-  let table = document.querySelector('table-body')
+  let table = document.querySelector('#table-body')
   let rows = Array.from(table.rows)
 
   let isNpiPresent = findRow(rows, data)
