@@ -1,3 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@layer components {
+  .table-row {
+    @apply bg-white border-b transition duration-300 ease-in-out hover:bg-gray-300;
+  }
+  .table-cell {
+    @apply text-sm text-gray-900 px-6 py-4 text-left;
+  }
+  .error {
+    @apply bg-red-400;
+  }
+  .info {
+    @apply bg-blue-400;
+  }
+  .warn {
+    @apply bg-yellow-400;
+  }
+  .warn, .info, .error {
+    @apply px-8 py-4;
+  }
+}
