@@ -17,7 +17,7 @@ export default class TableController extends Controller {
       notifier.notify('Found provider. Moving row to top...', 'info')
     }
 
-    if (!helper.checkRecordExists(input.value)) {
+    if (!helper.checkRecord(input.value)) {
       let provider = await services.providers.fetchNpi(input.value)
 
       if (provider) {
