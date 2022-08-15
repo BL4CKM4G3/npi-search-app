@@ -13,7 +13,8 @@ puts "Seeding db..."
   npi.name = Faker::Games::Zelda.character
   npi.enumeration_type = [0, 1].sample
   npi.status = ["A", "I"].sample
-  npi.credential = Faker::Number.number(digits: 10).to_s
+  npi.npi_number = Faker::Number.number(digits: 10).to_s
+  npi.credential = ['M.D', 'P.T'].sample
   npi.registered_at = 15.days.ago
   npi.last_updated = [1.days.ago, 2.days.ago].sample
 
