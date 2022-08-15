@@ -6,8 +6,8 @@ class CreateProviderCaches < ActiveRecord::Migration[7.0]
       t.string :status
       t.integer :enumeration_type
       t.string :credential
-      t.datetime :registered_at
       t.datetime :last_updated
+      t.datetime :registered_at
 
       t.timestamps
     end
