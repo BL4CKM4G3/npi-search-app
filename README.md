@@ -23,3 +23,8 @@ Here i am using:
 ```rails db:create db:migrate```
 
 ```foreman start -f Procfile.dev```
+
+
+#### If you want to access the project:
+
+[Link to project](https://cmt-solutions-test.herokuapp.com)
