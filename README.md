@@ -1,24 +1,25 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+CMT Solutions Test App
 
-Things you may want to cover:
+### Welcome to my Test :)
 
-* Ruby version
+Here i am using:
+- Ruby 2.7.5
+- Rails 7
+- Stimulus
+- Faraday
+- Rspec
+- FactoryBot
+- Tailwind CSS
+- PostgreSQL
 
-* System dependencies
+#### If you want to run the project:
 
-* Configuration
+```git clone <repo>```
 
-* Database creation
+```bundle install```
 
-* Database initialization
+```rails db:create db:migrate```
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```foreman start -f Procfile.dev```
