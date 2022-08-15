@@ -14,7 +14,7 @@ Here i am using:
 - Tailwind CSS
 - PostgreSQL
 
-#### If you want to run the project:
+## If you want to run the project:
 
 ```git clone <repo>```
 
@@ -25,6 +25,6 @@ Here i am using:
 ```foreman start -f Procfile.dev```
 
 
-#### If you want to access the project:
+## If you want to access the project:
 
 [Link to project](https://cmt-solutions-test.herokuapp.com)
