@@ -18,7 +18,7 @@ export default class TableController extends Controller {
     }
 
     if (!helper.checkRecord(input.value)) {
-      let provider = await services.providers.fetchNpi(input.value)
+      let provider = await services.providers.fetch(input.value)
 
       if (provider) {
         rows.add(provider)
