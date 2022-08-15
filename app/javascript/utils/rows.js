@@ -18,7 +18,7 @@ export const findRow = function(rows, data) {
 
 export const addRow = function(data) {
   // Table HTML Element
-  let element = document.querySelector('table-body')
+  let element = document.querySelector('#table-body')
   let recordFields = new Map(Object.entries(data))
   
   let row = document.createElement('tr')
